@@ -5,6 +5,6 @@ from .models import user
 
 
 def index(request):
-    return render(request, 'login/index.html',)
+    return render(request, 'log/index.html',)
 
 # Create your views here.
