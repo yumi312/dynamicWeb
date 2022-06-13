@@ -10,4 +10,8 @@ def index(request):
 
 
 def project(request):
-    return render(request, 'team/about_project.html',)
+    return render(request, 'team/about.html',)
+
+
+def contact(request):
+    return render(request, 'team/contact_us.html',)
