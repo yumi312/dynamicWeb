@@ -18,10 +18,12 @@ from django.urls import path
 from django.conf.urls import include
 from user import views as user_views
 from log import views as log_views
+from django.urls import path, include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', user_views.index),
     path('log/', log_views.index),
+    path('accounts/',include('allauth.urls')),
 ]
