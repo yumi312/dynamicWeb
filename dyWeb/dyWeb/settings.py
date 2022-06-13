@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'base',
     'user',
     'log',
+    'team',
 ]
 
 SITE_ID = 1

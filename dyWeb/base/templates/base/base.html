@@ -21,23 +21,15 @@
 
     <!-- Vendor CSS Files -->
     <link href="../../static/base/vendor/aos/aos.css" rel="stylesheet">
-    <!-- <link href="../../static/base/vendor/aos/aos.css" rel="stylesheet"> -->
     <link href="../../static/base/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="../../static/base/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="../../static/base/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <!-- <link href="../../static/base/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> -->
     <link href="../../static/base/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <!-- <link href="../../static/base/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"> -->
     <link href="../../static/base/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <!-- <link href="../../static/base/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
     <link href="../../static/base/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <!-- <link href="../../static/base/vendor/remixicon/remixicon.css" rel="stylesheet"> -->
     <link href="../../static/base/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <!-- <link href="../../static/base/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
 
     <!-- Template Main CSS File -->
     <link href="../../static/base/css/style.css" rel="stylesheet">
-    <!-- <link href="../../static/base/css/style.css" rel="stylesheet"> -->
 
     <!-- =======================================================
   * Template Name: Arsha - v4.~3.0
@@ -53,14 +45,14 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">專題汪汪隊</a></h1>
+            <h1 class="logo me-auto"><a href="/">專題汪汪隊</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="../../static/base/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">關於專題</a></li>
+                    <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/about_project/">關於專題</a></li>
 
 
 
@@ -92,7 +84,7 @@
     </header><!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
+    <!-- <section id="hero" class="d-flex align-items-center">
 
         <div class="container">
             <div class="row">
@@ -112,14 +104,19 @@
             </div>
         </div>
 
-    </section><!-- End Hero -->
+    </section> -->
+    <!-- End Hero -->
 
     <main id="main">
 
-
+        <main role="main">
+            <div class="starter-template">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
 
         <!-- ======= About Us Section ======= -->
-        <section id="about" class="about">
+        <!-- <section id="about" class="about">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -155,7 +152,8 @@
                 </div>
 
             </div>
-        </section><!-- End About Us Section -->
+        </section> -->
+        <!-- End About Us Section -->
 
         <!-- ======= Why Us Section ======= -->
         <section id="why-us" class="why-us section-bg">
