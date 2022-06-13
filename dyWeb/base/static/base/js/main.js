@@ -118,6 +118,30 @@
         this.classList.toggle("bi-x");
     });
 
+    $("body").on("click", "a.step", (evt) => {
+        evt.stopPropagation();
+        evt.preventDefault();
+    });
+
+    //
+    $("body").on("click", ".step", (evt) => {
+        const $target = $(evt.currentTarget);
+
+        const { scroll } = $target.data();
+        console.log(`${scroll}`);
+
+        $("html, body").animate(
+            {
+                scrollTop: $(`.${scroll}`).offset().top - 70,
+            },
+            500
+        );
+
+        var file = "../../../../team/templates/team/" + `${scroll}` + ".html";
+        console.log(file);
+        $(`${scroll}`).load(file);
+    });
+
     /**
      * Mobile nav dropdowns activate
      */
@@ -155,7 +179,10 @@
         },
         true
     );
-
+    // $("body").on("click", "a.step", (evt) => {
+    //     evt.stopPropagation();
+    //     evt.preventDefault();
+    // });
     /**
      * Scroll with ofset on page load with hash links in the url
      */
