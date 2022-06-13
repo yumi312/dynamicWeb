@@ -11,3 +11,7 @@ def index(request):
 
 def project(request):
     return render(request, 'team/about_project.html',)
+
+
+def contact(request):
+    return render(request, 'team/contact_us.html',)
