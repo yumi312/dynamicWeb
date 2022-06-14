@@ -6,4 +6,4 @@ from . import models
 
 
 def index(request):
-    return render(request, 'log/index.html',)
+    return render(request, 'log/log_index.html',)

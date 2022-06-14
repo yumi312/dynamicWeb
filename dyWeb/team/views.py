@@ -9,9 +9,5 @@ def index(request):
     return render(request, 'team/index.html',)
 
 
-def project(request):
-    return render(request, 'team/about.html',)
-
-
 def contact(request):
     return render(request, 'team/contact_us.html',)

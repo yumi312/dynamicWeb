@@ -23,12 +23,12 @@ from team import views as team_views
 urlpatterns = [
     path('', team_views.index),
 
-    path('about/', team_views.project),
     path('contact/', team_views.contact),
 
     path('admin/', admin.site.urls),
     path('user/', user_views.index),
     path('log/', log_views.index),
+
     path('accounts/', include('allauth.urls')),
 
 ]
