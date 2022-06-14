@@ -128,7 +128,6 @@
         const $target = $(evt.currentTarget);
 
         const { scroll } = $target.data();
-        console.log(`${scroll}`);
 
         $("html, body").animate(
             {
@@ -136,10 +135,6 @@
             },
             500
         );
-
-        var file = "../../../../team/templates/team/" + `${scroll}` + ".html";
-        console.log(file);
-        $(`${scroll}`).load(file);
     });
 
     /**
@@ -179,10 +174,7 @@
         },
         true
     );
-    // $("body").on("click", "a.step", (evt) => {
-    //     evt.stopPropagation();
-    //     evt.preventDefault();
-    // });
+
     /**
      * Scroll with ofset on page load with hash links in the url
      */
