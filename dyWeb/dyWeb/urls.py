@@ -19,16 +19,23 @@ from user import views as user_views
 from log import views as log_views
 from team import views as team_views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('', team_views.index),
-
-    path('about/', team_views.project),
+    # path('team/', include('team.urls')),
     path('contact/', team_views.contact),
 
     path('admin/', admin.site.urls),
     path('user/', user_views.index),
     path('log/', log_views.index),
+    path('detail/<slug:slug>/', log_views.detail),
+    # path('log/detail/', log_views.detail),
+    path('categories/<slug:slug>/', log_views.categories),
+    path('tags/<slug:slug>/', log_views.tags),
+
     path('accounts/', include('allauth.urls')),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

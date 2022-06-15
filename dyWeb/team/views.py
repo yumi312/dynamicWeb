@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'team/index.html',)
 
 
-def project(request):
+def about(request):
     return render(request, 'team/about.html',)
 
 
