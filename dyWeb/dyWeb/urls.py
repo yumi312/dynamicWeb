@@ -33,9 +33,12 @@ urlpatterns = [
     path('user/', user_views.index),
     path('log/', log_views.index),
     path('log/create/', log_views.create),
+    path('log/edit/<int:pk>/', log_views.edit, name="edit"),
+    path('log/delete/<int:pk>/', log_views.delete, name="delete"),
+
     path('detail/<slug:slug>/', log_views.detail),
 
-    path('categories/<slug:slug>/', log_views.categories),
+    path('cates/<slug:slug>/', log_views.categories),
     path('tags/<slug:slug>/', log_views.tags),
 
     path('accounts/', include('allauth.urls')),

@@ -32,10 +32,21 @@
                             <img href="#" class="img img-2" src="{{log.image.url}}">
 
                             <div class="text text-2 pt-2 mt-3">
-                                <span class="category mb-3 d-block"><a href="#">{{log.category}}</a></span>
+                                <span class="category mb-3 d-block"><a href="#">{{log.categories}}</a></span>
                                 <h3 class="mb-4"><a href="/detail/{{log.slug}}">{{log.title}}</a>
                                 </h3>
                                 <p class="mb-4">{{log.contents | truncatechars:100}}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        {% if perms.log.change_log %}
+                                        <a href="{% url 'edit' pk=log.pk %}" class="card-link">Edit</a>
+                                        {% endif %}
+                                        {% if perms.log.delete_log %}
+                                        <a href="{% url 'delete' pk=log.pk %}" class="card-link">Delete</a>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
                                 <div class="author mb-4 d-flex align-items-center">
                                     <a href="#" class="img"></a>
 
@@ -53,9 +64,11 @@
             </div>
             <div class="col-lg-3 col-md-3 sidebar ">
                 <div class="sidebar-search-box ms-2">
+                    {% if perms.log.add_log %}
                     <button class="btn mb-1 text-white rounded-pill text-white"
                         style="background-color: #37517e;width:100%; height:40px;">
-                        <a href="/log/create/">CreateLog</a></button>
+                        <a href="/log/create/">Create Log</a></button>
+                    {% endif %}
                     <form action="#" class="search-form">
                         <div class="form-group">
                             <span class="icon icon-search"></span>
@@ -68,12 +81,8 @@
                 <div class="sidebar-box ms-2">
                     <h3 class="sidebar-heading">Categories</h3>
                     <ul class="categories">
-                        {% for log in logs %}
-                        <p>{{log.categories}}</p>
-                        {% for category in log.categories.all %}
-                        <!-- 自首出現問題 -->
-                        <li><a href="#">{{category}}<span>(6)</span></a></li>
-                        {% endfor %}
+                        {% for cate in cates %}
+                        <li><a href="/cates/{{cate.slug}}">{{cate}}<span>(6)</span></a></li>
                         {% endfor %}
                         <li><a href="#">AI與情感運算<span>(8)</span></a></li>
                         <li><a href="#">網站程式<span>(2)</span></a></li>
@@ -127,11 +136,10 @@
                 <div class="sidebar-box ms-2">
                     <h3 class="sidebar-heading">#Hashtag</h3>
                     <ul class="tagcloud">
-                        {% for log in logs %}
-                        {% for tag in log.tags.all %}
+                        {% for tag in tags %}
                         <a href="/tags/{{tag.slug}}" class="tag-cloud-link">{{tag}}</a>
                         {% endfor %}
-                        {% endfor %}
+
                     </ul>
                 </div>
 
