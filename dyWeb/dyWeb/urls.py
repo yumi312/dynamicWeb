@@ -25,14 +25,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', team_views.index),
-    # path('team/', include('team.urls')),
+    # path('about/', team_views.about),
     path('contact/', team_views.contact),
+    path('about_team/', team_views.abt_team),
 
     path('admin/', admin.site.urls),
     path('user/', user_views.index),
     path('log/', log_views.index),
     path('detail/<slug:slug>/', log_views.detail),
-    # path('log/detail/', log_views.detail),
+
     path('categories/<slug:slug>/', log_views.categories),
     path('tags/<slug:slug>/', log_views.tags),
 
