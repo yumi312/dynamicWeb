@@ -73,9 +73,9 @@
 <!-- End About Us Section -->
 {% endblock %}
 
-
+{% block feature %}
 <!-- ======= Why Us Section ======= -->
-<section id="why-us" class="why-us section-bg">
+<section id="feature" class="feature section-bg">
     <div class="container-fluid" data-aos="fade-up">
 
         <div class="row">
@@ -149,8 +149,11 @@
         </div>
 
     </div>
-</section><!-- End Why Us Section -->
+</section>
+{%endblock%}
+<!-- End Why Us Section -->
 
+{%block skill%}
 <!-- ======= Skills Section ======= -->
 <section id="skills" class="skills">
     <div class="container" data-aos="fade-up">
@@ -159,12 +162,14 @@
         </div>
         <div class="row justify-content-center">
             <!-- 目前會出錯，先不放 -->
-            <!-- <iframe class=""
+            <iframe class=""
                 src="https://docs.google.com/presentation/d/e/2PACX-1vSMzE1ouqYXwKQvErpgQYF1ylah7_HHQ-esuJEdROEU07ci7YAK4eYVWDhFlponGg/embed?start=true&loop=true&delayms=3000"
                 frameborder="0" width="680" height="499" allowfullscreen="true" mozallowfullscreen="true"
-                webkitallowfullscreen="true"></iframe> -->
+                webkitallowfullscreen="true"></iframe>
         </div>
 
 
     </div>
-</section><!-- End Skills Section -->
+</section>
+{%endblock%}
+<!-- End Skills Section -->
