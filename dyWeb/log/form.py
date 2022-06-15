@@ -23,7 +23,7 @@ class LogForm(ModelForm):
         }
         labels = {
             'title': '名稱',       # labels['title']
-            'description': '敘述',
+            'contents': '日誌',
             'slug': '代號',
             'category': '類別',
             'tags': '標籤',
