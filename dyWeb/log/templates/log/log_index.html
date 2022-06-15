@@ -62,22 +62,21 @@
                 </div>
 
 
-
                 <div class="sidebar-box ms-2">
                     <h3 class="sidebar-heading">Categories</h3>
                     <ul class="categories">
                         {% for log in logs %}
-                        {% for tag in log.tags.all %}
-                        <li><a href="/tags/{{tag.slug}}">{{tag}}<span>(6)</span></a></li>
-
+                        <p>{{log.categories}}</p>
+                        {% for category in log.categories.all %}
+                        <!-- 自首出現問題 -->
+                        <li><a href="#">{{category}}<span>(6)</span></a></li>
                         {% endfor %}
                         {% endfor %}
-                        <!-- <li><a href="#">爬蟲與斷詞<span>(6)</span></a></li>
                         <li><a href="#">AI與情感運算<span>(8)</span></a></li>
                         <li><a href="#">網站程式<span>(2)</span></a></li>
                         <li><a href="#">資料搜集<span>(2)</span></a></li>
                         <li><a href="#">文書處理<span>(7)</span></a></li>
-                        <li><a href="#">美術設計<span>(7)</span></a></li> -->
+                        <li><a href="#">美術設計<span>(7)</span></a></li>
                     </ul>
                 </div>
 
@@ -125,14 +124,11 @@
                 <div class="sidebar-box ms-2">
                     <h3 class="sidebar-heading">#Hashtag</h3>
                     <ul class="tagcloud">
-                        <a href="#" class="tag-cloud-link">AI</a>
-                        <a href="#" class="tag-cloud-link">爬蟲</a>
-                        <a href="#" class="tag-cloud-link">斷詞</a>
-                        <a href="#" class="tag-cloud-link">後端</a>
-                        <a href="#" class="tag-cloud-link">資料庫</a>
-                        <a href="#" class="tag-cloud-link">比賽</a>
-                        <a href="#" class="tag-cloud-link">介面設計</a>
-                        <a href="#" class="tag-cloud-link">企劃書</a>
+                        {% for log in logs %}
+                        {% for tag in log.tags.all %}
+                        <a href="/tags/{{tag.slug}}" class="tag-cloud-link">{{tag}}</a>
+                        {% endfor %}
+                        {% endfor %}
                     </ul>
                 </div>
 

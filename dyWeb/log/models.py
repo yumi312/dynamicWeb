@@ -32,9 +32,14 @@ class Tag(models.Model):
 
 class Category(models.Model):
     title = models.CharField(max_length=255, default="")
+    slug = models.SlugField(blank=True, default="")
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Category, self).save()
 
 
 class Log(models.Model):
@@ -44,7 +49,7 @@ class Log(models.Model):
     contents = models.TextField(default="")
     slug = models.SlugField(blank=True, default="")
     tags = models.ManyToManyField(Tag)  # hashtag
-    category = models.ForeignKey(
+    categories = models.ForeignKey(
         Category, null=True, on_delete=models.PROTECT)  # 分成 程式、美術等等的分類
     image = models.ImageField(default="", blank=True, upload_to="images")
     image_thumbnail = ImageSpecField(source='image',

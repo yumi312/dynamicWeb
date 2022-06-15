@@ -33,6 +33,7 @@ urlpatterns = [
     path('log/', log_views.index),
     path('detail/<slug:slug>/', log_views.detail),
     # path('log/detail/', log_views.detail),
+    path('categories/<slug:slug>/', log_views.categories),
     path('tags/<slug:slug>/', log_views.tags),
 
     path('accounts/', include('allauth.urls')),
