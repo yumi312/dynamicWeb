@@ -35,12 +35,16 @@ def detail(request, slug=None):  # < here
 
 def tags(request, slug=None):
     logs = Log.objects.filter(tags__slug=slug)
-    return render(request, 'log/log_index.html', {'logs': logs})
+    cates = Category.objects.all()
+    tags = Tag.objects.all()
+    return render(request, 'log/log_index.html', {'logs': logs, 'cates': cates, 'tags': tags})
 
 
 def categories(request, slug=None):
     logs = Log.objects.filter(categories__slug=slug)
-    return render(request, 'log/log_index.html', {'logs': logs})
+    cates = Category.objects.all()
+    tags = Tag.objects.all()
+    return render(request, 'log/log_index.html', {'logs': logs, 'cates': cates, 'tags': tags})
 
 
 @permission_required('log.add_log')

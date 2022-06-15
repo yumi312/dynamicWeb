@@ -19,7 +19,7 @@ class LogForm(ModelForm):
             # dropdowm list
             'tags': forms.SelectMultiple(attrs={'class': 'form-control mb-2 input-group'}),
             'categories': forms.Select(attrs={'class': 'form-control mb-2 input-group'}),
-            'edit_time': forms.TextInput(attrs={'class': 'form-control mb-2 input-group'}),
+            'edit_time': forms.TextInput(attrs={'class': 'form-control mb-2 input-group', 'type': 'datetime-local'}),
         }
         labels = {
             'title': '名稱',

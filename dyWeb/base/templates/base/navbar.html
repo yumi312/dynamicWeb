@@ -1,0 +1,54 @@
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a href="/">數資汪汪隊</a></h1>
+
+        <nav id="navbar" class="navbar bg-1">
+            <ul>
+                <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                <li>
+                    <a class="nav-link step" data-scroll="about" href="/about/">關於專題</a>
+
+                <li><a class="nav-link scrollto" href="#skills">PPT</a>
+                </li>
+
+
+                <li class="dropdown"><a href="/log/"><span>進度日誌</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+
+                        <li class="dropdown"><a href="#"><span>程式組</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">爬蟲與斷詞</a></li>
+                                <li><a href="#">AI</a></li>
+                                <li><a href="#">網頁</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>slug_demo</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                {% for cate in cates %}
+                                <li><a href="/cates/{{cate.slug}}">{{cate}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                <li><a class="nav-link" href="/about_team/">團隊介紹</a></li>
+
+                </li>
+
+                <li><a class="nav-link scrollto" href="/contact/">聯絡我們</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a class="getstarted scrollto" href="/accounts/logout">LOGOUT</a></li>
+                {% else %}
+
+                <li><a class="getstarted scrollto" href="/accounts/login">LOGIN</a></li>
+
+                {% endif %}
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->

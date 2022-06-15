@@ -37,7 +37,6 @@ urlpatterns = [
     path('log/delete/<int:pk>/', log_views.delete, name="delete"),
 
     path('detail/<slug:slug>/', log_views.detail),
-
     path('cates/<slug:slug>/', log_views.categories),
     path('tags/<slug:slug>/', log_views.tags),
 
