@@ -6,13 +6,10 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>數資汪汪隊</title>
+    <title>Arsha Bootstrap Template - Index</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-
-    <!-- log -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <base href="/">
     <!-- Favicons -->
     <link href="../../static/base/img/favicon.png" rel="icon">
     <link href="../../static/base/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -21,11 +18,6 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-    <!-- log -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="../../static/base/vendor/aos/aos.css" rel="stylesheet">
@@ -33,24 +25,11 @@
     <link href="../../static/base/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="../../static/base/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="../../static/base/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <!-- <link href="../../static/base/vendor/remixicon/remixicon.css" rel="stylesheet"> -->
+    <link href="../../static/base/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="../../static/base/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="../../static/base/css/style.css" rel="stylesheet">
-
-    <!-- log -->
-    <link rel="stylesheet" href="../../static/base/vendor/bootstrap-icons/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="../../static/base/vendor/animate/animate.css">
-    <link rel="stylesheet" href="../../static/base/vendor/owl/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../static/base/vendor/owl/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../../static/base/vendor/magnific/magnific-popup.css">
-    <link rel="stylesheet" href="../../static/base/vendor/ionicons/ionicons.min.css">
-    <link rel="stylesheet" href="../../static/base/vendor/bootstrap/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="../../static/base/css/jquery.timepicker.css">
-    <link rel="stylesheet" href="../../static/base/vendor/flaticon/flaticon.css">
-    <!-- <link rel="stylesheet" href="../../static/base/vendor/icomoon/icomoon.css"> -->
-    <link rel="stylesheet" href="../../static/base/css/style_log.css">
 
     <!-- =======================================================
   * Template Name: Arsha - v4.~3.0
@@ -66,7 +45,9 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="/">數資汪汪隊</a></h1>
+            <h1 class="logo me-auto"><a href="/">專題汪汪隊</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="../../static/base/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar bg-1">
                 <ul>
@@ -74,11 +55,8 @@
                     <li>
                         <a class="nav-link step" data-scroll="about" href="/about/">關於專題</a>
 
-                    <li><a class="nav-link scrollto" href="#skills">PPT</a>
-                    </li>
-
-
-                    <li class="dropdown"><a href="/log/"><span>進度日誌</span> <i class="bi bi-chevron-down"></i></a>
+                    <li><a class="nav-link scrollto" href="#skills">PPT</a></li>
+                    <li class="dropdown"><a href="#portfolio"><span>進度日誌</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
 
                             <li class="dropdown"><a href="#"><span>程式組</span> <i class="bi bi-chevron-right"></i></a>
@@ -98,6 +76,7 @@
                     </li>
 
                     <li><a class="nav-link scrollto" href="/contact/">聯絡我們</a></li>
+
                     {% if request.user.is_authenticated %}
                     <li><a class="getstarted scrollto" href="/accounts/logout">LOGOUT</a></li>
                     {% else %}
@@ -106,6 +85,7 @@
 
                     {% endif %}
 
+
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -113,24 +93,37 @@
         </div>
     </header><!-- End Header -->
 
-    <main id="main">
 
+    <main id="main">
         <main role="main">
             <div class="starter-template">
-                {% block index %}{% endblock %}
-                {% block about %}{% endblock %}
-                {% block feature %}{% endblock %}
-                {% block skill %}{% endblock %}
-                {% block contact %}{% endblock %}
-                {% block team %}{% endblock %}
-
-                {% block log %}{% endblock %}
+                <section id="about" class="about">
+                    <div class="container">
+                        <div class="row align-items-center min-vh-100">
+                            <div class="col-md-7 col-xl-7 pt-9 text-md-start text-center">
+                                <h1 class="display-2  fw-thin" style="color: #37517e;">We provide the best <br
+                                        class="d-none d-xl-block" />value <strong class="fw-bolder">insurance </strong>
+                                </h1>
+                                <p class="fs-2 text-400">Simple Steps You Can Take to Improve Your <br
+                                        class="d-none d-xxl-block" />Financial Well-Being for the rest of Your Life </p>
+                                <a class="btn btn-primary btn-ensurance mt-1" href="#!"><span
+                                        class="fas fa-chevron-right fa-xs btn-icon"></span><span class="btn-text">Learn
+                                        more</span></a>
+                            </div>
+                            <div class="col-md-5 col-xl-5 pe-xxl-0">
+                                <div class="card card-bg shadow hero-header-form">
+                                    <div class="card-body p-4 p-xl-6">
+                                        {% block content %}{% endblock %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
+    </main>
 
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
     <footer id="footer">
 
         <div class="footer-newsletter">
@@ -235,26 +228,6 @@
 
     <!-- Template Main JS File -->
     <script src="../../static/base/js/main.js"></script>
-
-    <!-- log -->
-    <script src="../../static/base/log_js/jquery.min.js"></script>
-    <script src="../../static/base/log_js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="../../static/base/log_js/popper.min.js"></script>
-    <script src="../../static/base/log_js/bootstrap.min.js"></script>
-    <script src="../../static/base/log_js/jquery.easing.1.3.js"></script>
-    <script src="../../static/base/log_js/jquery.waypoints.min.js"></script>
-    <script src="../../static/base/log_js/jquery.stellar.min.js"></script>
-    <script src="../../static/base/log_js/owl.carousel.min.js"></script>
-    <script src="../../static/base/log_js/jquery.magnific-popup.min.js"></script>
-    <script src="../../static/base/log_js/aos.js"></script>
-    <script src="../../static/base/log_js/jquery.animateNumber.min.js"></script>
-    <script src="../../static/base/log_js/bootstrap-datepicker.js"></script>
-    <!-- <script src="js/jquery.timepicker.min.js"></script> -->
-    <script src="../../static/base/log_js/scrollax.min.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="../../static/base/log_js/google-map.js"></script>
-
 
 </body>
 

@@ -32,6 +32,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', user_views.index),
     path('log/', log_views.index),
+    path('log/create/', log_views.create),
+
     path('detail/<slug:slug>/', log_views.detail),
 
     path('categories/<slug:slug>/', log_views.categories),

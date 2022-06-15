@@ -1,7 +1,10 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+
+from .form import LogForm
 
 from .models import Log
+from django.contrib.auth.decorators import permission_required
 # Create your views here.
 
 
@@ -34,3 +37,15 @@ def tags(request, slug=None):
 def categories(request, slug=None):
     logs = Log.objects.filter(categories__slug=slug)
     return render(request, 'log/log_index.html', {'logs': logs})
+
+
+@permission_required('log.add_log')
+def create(request):
+    if request.method == "POST":
+        form = LogForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("log/")
+    else:
+        form = LogForm()
+    return render(request, "log/edit.html", {'form': form})

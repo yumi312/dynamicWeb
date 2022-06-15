@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% block log %}
+<section>
+    <form action="" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col-6">
+                {{ form }}
+                <hr class="mb-3">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+            </div>
+        </div>
+</section>
+{% endblock %}
