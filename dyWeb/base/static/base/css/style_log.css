@@ -735,6 +735,7 @@ h6,
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 30px;
+    font-weight: bold;
 }
 @media (max-width: 767.98px) {
     .sidebar-box {
@@ -986,7 +987,9 @@ h6,
     flex: 0 0 50%;
     max-width: 50%;
 }
-
+.font-weight-bold {
+    font-weight: 700 !important;
+}
 /* .btn {
     cursor: pointer;
     -webkit-border-radius: 30px;

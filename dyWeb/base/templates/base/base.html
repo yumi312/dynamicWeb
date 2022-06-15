@@ -21,6 +21,8 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
     <!-- log -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
@@ -73,7 +75,7 @@
                         <a class="nav-link step" data-scroll="about" href="/about/">關於專題</a>
 
 
-                    <li class="dropdown"><a href="/log"><span>進度日誌</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="/log/"><span>進度日誌</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
 
                             <li class="dropdown"><a href="#"><span>程式組</span> <i class="bi bi-chevron-right"></i></a>
@@ -108,7 +110,8 @@
             <div class="starter-template">
                 {% block index %}{% endblock %}
                 {% block about %}{% endblock %}
-
+                {% block feature %}{% endblock %}
+                {% block skill %}{% endblock %}
 
                 {% block log %}{% endblock %}
             </div>

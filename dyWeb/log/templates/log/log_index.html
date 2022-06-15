@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load static %}
+
 {% block log%}
 <!-- <link rel="stylesheet" href="../../static/base/css/style_log.css"> -->
 
@@ -23,62 +24,33 @@
         <div class="log_row">
             <div class="col-lg-9 col-md-9 ">
                 <div class="log_row">
+                    {% for log in logs %}
                     <div class="col-md-6">
                         <!--這個只要留一塊就好-->
                         <div class="blog-entry  me-3">
-                            <a href="#" class="img img-2"
-                                style="background-image: url(../../static/base/img/log/image_1.jpg);"></a>
+                            <!-- <a ></a> -->
+                            <img href="#" class="img img-2" src="{{log.image.url}}">
 
                             <div class="text text-2 pt-2 mt-3">
-                                <span class="category mb-3 d-block"><a href="#">Technology</a></span>
-                                <h3 class="mb-4"><a href="single.html">The Newest Technology On This Year 2019</a>
+                                <span class="category mb-3 d-block"><a href="#">{{log.category}}</a></span>
+                                <h3 class="mb-4"><a href="/detail/{{log.slug}}">{{log.title}}</a>
                                 </h3>
-                                <p class="mb-4">Even the all-powerful Pointing has no control about the blind texts
-                                    it is an almost</p>
-                                <div class="author mb-4 d-flex align-items-center"
-                                    style="background-image: url(../../static/base/img/log/person_2.jpg);">
+                                <p class="mb-4">{{log.contents | truncatechars:100}}</p>
+                                <div class="author mb-4 d-flex align-items-center">
                                     <a href="#" class="img"></a>
 
                                     <!--作者頭貼我們應該沒有？-->
                                     <div class="ml-3 info">
                                         <span>Written by</span>
-                                        <h3><a href="#">Dave Lewis</a>, <span>Nov. 28, 2018</span></h3>
+                                        <h3><a href="#">{{log.author_name}}</a>, <span>{{log.edit_time}}</span></h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="col-md-6">
-                        <!--這塊刪掉-->
-                        <div class="blog-entry me-3">
-                            <a href="#" class="img img-2"
-                                style="background-image: url(../../static/base/img/log/image_1.jpg);"></a>
-
-                            <div class="text text-2 pt-2 mt-3">
-                                <span class="category mb-3 d-block"><a href="#">Technology</a></span>
-                                <h3 class="mb-4"><a href="single.html">The Newest Technology On This Year 2019</a>
-                                </h3>
-                                <p class="mb-4">Even the all-powerful Pointing has no control about the blind texts
-                                    it is an almost</p>
-                                <div class="author mb-4 d-flex align-items-center">
-                                    <a href="#" class="img"
-                                        style="background-image: url(../../static/base/img/log/person_2.jpg);"></a>
-
-                                    <div class="ml-3 info">
-                                        <span>Written by</span>
-                                        <h3><a href="#">Dave Lewis</a>, <span>Nov. 28, 2018</span></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    {% endfor %}
                 </div><!-- END-->
             </div>
-
             <div class="col-lg-3 col-md-3 sidebar ">
                 <div class="sidebar-search-box ms-2">
                     <form action="#" class="search-form">
@@ -88,17 +60,27 @@
                         </div>
                     </form>
                 </div>
+
+
+
                 <div class="sidebar-box ms-2">
                     <h3 class="sidebar-heading">Categories</h3>
                     <ul class="categories">
-                        <li><a href="#">爬蟲與斷詞 <span>(6)</span></a></li>
-                        <li><a href="#">AI與情感運算 <span>(8)</span></a></li>
-                        <li><a href="#">網站程式 <span>(2)</span></a></li>
-                        <li><a href="#">資料搜集 <span>(2)</span></a></li>
-                        <li><a href="#">文書處理 <span>(7)</span></a></li>
-                        <li><a href="#">美術設計<span>(7)</span></a></li>
+                        {% for log in logs %}
+                        {% for tag in log.tags.all %}
+                        <li><a href="/tags/{{tag.slug}}">{{tag}}<span>(6)</span></a></li>
+
+                        {% endfor %}
+                        {% endfor %}
+                        <!-- <li><a href="#">爬蟲與斷詞<span>(6)</span></a></li>
+                        <li><a href="#">AI與情感運算<span>(8)</span></a></li>
+                        <li><a href="#">網站程式<span>(2)</span></a></li>
+                        <li><a href="#">資料搜集<span>(2)</span></a></li>
+                        <li><a href="#">文書處理<span>(7)</span></a></li>
+                        <li><a href="#">美術設計<span>(7)</span></a></li> -->
                     </ul>
                 </div>
+
 
                 <div class="sidebar-box">
                     <h3 class="sidebar-heading">Popular Articles</h3>
