@@ -26,8 +26,10 @@ def index(request):
 
 def detail(request, slug=None):  # < here
     log = get_object_or_404(Log, slug=slug)
+    cates = Category.objects.all()
+    tags = Tag.objects.all()
 
-    return render(request, 'log/detail.html', {'log': log})
+    return render(request, 'log/detail.html', {'log': log, 'cates': cates, 'tags': tags})
 
 # def detail(request):  # < here
 #     return render(request, 'log/detail.html')
